@@ -1,0 +1,21 @@
+ul {
+    cursor: pointer;
+
+    & li {
+        margin-right: 6px;
+        display: inline-block;
+        &:not(:last-child):after {
+            content: '/';
+            padding-left: 6px;
+        }
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}
+
+.header {
+    border-bottom: 1px solid gray;
+    display: block;
+}

@@ -1,0 +1,26 @@
+<app-grid
+[data]="convertedProjects$ | async"
+[template]="projectCntTemp"
+(actionClicked)="addToFavorites($event)"
+></app-grid>
+
+<ng-template #projectCntTemp let-description="description" let-rating="rating" let-language="language" let-linkToProject="linkToProject">
+    <ul>
+        <li>
+            <span>Рейтинг: </span>
+            <span>{{rating}}</span>
+        </li>
+        <li>
+            <span>Описание: </span>
+            <span>{{description}}</span>
+        </li>
+        <li>
+            <span>ЯП: </span>
+            <span>{{language}}</span>
+        </li>
+        <li>
+            <span>Ссылка: </span>
+            <span>{{linkToProject}}</span>
+        </li>
+    </ul>
+</ng-template>

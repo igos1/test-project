@@ -1,0 +1,5 @@
+<div class="header">
+    <ul>
+        <li *ngFor="let state of stateList" (click)=goTo(state.link)>{{state.name}}</li>
+    </ul>
+</div>

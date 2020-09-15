@@ -1,0 +1,20 @@
+<div class="grid-container">
+  <mat-card *ngFor="let item of data" class="grid-item">
+    <mat-card-header>
+      <div mat-card-avatar >
+        <img class="header-image" mat-card-image [attr.src]="item.avatarSrc">
+      </div>
+      <mat-card-title>{{item.title}}</mat-card-title>
+      <mat-card-subtitle>{{item.subtitle}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        <ng-container *ngTemplateOutlet="template; context: item.content"></ng-container>
+         <!--for cases where the structure of elements is different (just can insert a list of projects)-->
+      </p>
+    </mat-card-content>
+    <mat-card-actions  class="action-btns">
+      <button mat-button *ngFor="let action of item.actions" (click)="actionClicked.emit(item)">{{action}}</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
